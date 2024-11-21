@@ -14,6 +14,7 @@ namespace Snake_Elovikov_Galkin
 {
 	internal class Program
 	{
+		// Еловиков Степан и Галкин Никита ИСП-21-2
 		public static List<Leaders> leaders = new List<Leaders>();
 		public static List<ViewModelUserSettings> remoteIPAddress = new List<ViewModelUserSettings>();
 		public static List<ViewModelGames> viewModelGames = new List<ViewModelGames>();
