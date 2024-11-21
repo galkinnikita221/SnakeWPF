@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
 
 namespace SnakeWPF.Pages
 {
@@ -51,7 +52,7 @@ namespace SnakeWPF.Pages
             MainWindow.mainWindow.ViewModelUserSettings.IPAddress = ip.Text;
             MainWindow.mainWindow.ViewModelUserSettings.Port = port.Text;
             MainWindow.mainWindow.ViewModelUserSettings.Name = name.Text;
-            MainWindow.Send("/start|" + JsonConvert.SerializeObject(MainWindow.mainWindow.ViewModelUserSettings));
+            MainWindow.mainWindow.Send("/start|" + JsonConvert.SerializeObject(MainWindow.mainWindow.ViewModelUserSettings));
         }
     }
 }
