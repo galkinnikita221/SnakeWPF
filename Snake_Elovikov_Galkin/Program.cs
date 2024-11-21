@@ -158,5 +158,20 @@ namespace Snake_Elovikov_Galkin
 			SW.WriteLine(json);
 			SW.Close();
 		}
+		public static void LoadLeaders()
+		{
+			if (File.Exists("./leaders.txt"))
+			{
+				StreamReader SR = new StreamReader("./leaders.txt");
+				string json = SR.ReadLine();
+				SR.Close();
+				if (!string.IsNullOrEmpty(json))
+					leaders = JsonConvert.DeserializeObject<List<Leaders>>(json);
+				else
+					leaders = new List<Leaders>();
+			}
+			else
+				leaders = new List<Leaders>();
+		}
 	}
 }
