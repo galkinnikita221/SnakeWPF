@@ -79,6 +79,7 @@ namespace Snake_Elovikov_Galkin
 						Console.ForegroundColor = ConsoleColor.Green;
 						Console.WriteLine($"Подключился пользователь: {viewModelUserSettings.IPAddress}:{viewModelUserSettings.Port}");
 						remoteIPAddress.Add(viewModelUserSettings);
+						viewModelUserSettings.IdSnake = AddSnake();
 						viewModelGames[viewModelUserSettings.IdSnake].IdSnake = viewModelUserSettings.IdSnake;
 					}
 					else
@@ -121,6 +122,7 @@ namespace Snake_Elovikov_Galkin
 				direction = Snakes.Direction.Start
 			};
 			viewModelGamesPlayer.Points = new Snakes.Point(new Random().Next(10, 783), new Random().Next(10, 410));
+			viewModelGames.Add(viewModelGamesPlayer);
 			return viewModelGames.FindIndex(x => x == viewModelGamesPlayer);
 		}
 		public static void Timer()
