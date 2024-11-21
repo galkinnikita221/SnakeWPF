@@ -89,5 +89,21 @@ namespace Snake_Elovikov_Galkin
 				Console.WriteLine($"Возникло исключение: {ex.ToString()}\n{ex.Message}");
 			}
 		}
+		public static int AddSnake()
+		{
+			ViewModelGames viewModelGamesPlayer = new ViewModelGames();
+			viewModelGamesPlayer.SnakesPlayers = new Snakes()
+			{
+				Points = new List<Snakes.Point>()
+				{
+					new Snakes.Point() {X = 30, Y = 10},
+					new Snakes.Point() {X = 20, Y = 10},
+					new Snakes.Point() {X = 10, Y = 10}
+				},
+				direction = Snakes.Direction.Start
+			};
+			viewModelGamesPlayer.Points = new Snakes.Point(new Random().Next(10, 783), new Random().Next(10, 410));
+			return viewModelGames.FindIndex(x => x == viewModelGamesPlayer);
+		}
 	}
 }
