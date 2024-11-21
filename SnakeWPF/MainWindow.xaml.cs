@@ -100,7 +100,7 @@ namespace SnakeWPF
             }
             catch (Exception ex)
             {
-                Debug.WriteLine("Возникло исключение: " + ex.ToString() + "\n " + ex.Message);
+                Debug.WriteLine("Возникла ошибка: " + ex.ToString() + "\n " + ex.Message);
             }
             finally
             {
