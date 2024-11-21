@@ -120,13 +120,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Image\" />
+    <Resource Include="Image\background.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{77f647c3-56e5-420d-9523-f7ad2dd6ac30}</Project>
       <Name>Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\background_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\background_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Apple.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -13,13 +13,13 @@
             <ImageBrush ImageSource="/SnakeWPF;component/Image/background.jpg"/>
         </Grid.Background>
         <Grid>
-            <Grid Width="320" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid Width="420" Height="250" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Grid.Background>
-                    <ImageBrush ImageSource="/SnakeWPF;component/Image/background_2.jpg"/>
+                    <ImageBrush ImageSource="/SnakeWPF;component/Image/background_2.png"/>
                 </Grid.Background>
                 <Label x:Name="name" Content="NikitaStepan" Margin="45,18,45,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontFamily="Forte" FontSize="16"/>
                 <Label x:Name="glasses" Content="90 glasses" Margin="45,50,45,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontFamily="Forte"/>
-                <Button Click="OpenHome" Content="Main Menu" HorizontalAlignment="Left" Margin="45,0,0,10" VerticalAlignment="Bottom" Width="230" Height="25" FontFamily="Forte"/>
+                <Button Click="OpenHome" Content="Main Menu" HorizontalAlignment="Center" Margin="0,0,0,50" VerticalAlignment="Bottom" Width="230" Height="25" FontFamily="Forte"/>
                 <Label x:Name="top" Content="999" Margin="45,76,45,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontFamily="Forte" Height="84" VerticalContentAlignment="Center" FontSize="48"/>
             </Grid>
         </Grid>
