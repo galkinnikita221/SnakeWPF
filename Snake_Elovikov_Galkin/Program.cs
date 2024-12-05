@@ -166,7 +166,54 @@ namespace Snake_Elovikov_Galkin
 						Snake.GameOver = true;
 					else if (Snake.Points[0].Y <= 0 || Snake.Points[0].Y >= 420)
 						Snake.GameOver = true;
+					if (Snake.direction != Snakes.Direction.Start)
+					{
+						for (int i = 1; i < Snake.Points.Count; i++)
+						{
+							if (Snake.Points[0].X >= Snake.Points[i].X - 1 && Snake.Points[0].X <= Snake.Points[i].X + 1)
+							{
+								if (Snake.Points[0].Y >= Snake.Points[i].Y - 1 && Snake.Points[0].Y <= Snake.Points[i].Y + 1)
+								{
+									Snake.GameOver = true;
+									break;
+								}
+							}
+						}
+					}
+					if (Snake.Points[0].X >= viewModelGames.Find(x => x.IdSnake == User.IdSnake).Points.X - 15 &&
+						Snake.Points[0].X <= viewModelGames.Find(x => x.IdSnake == User.IdSnake).Points.X +15)
+					{
+						if (Snake.Points[0].Y >= viewModelGames.Find(x => x.IdSnake == User.IdSnake).Points.Y - 15 &&
+							Snake.Points[0].Y <= viewModelGames.Find(x => x.IdSnake == User.IdSnake).Points.Y + 15)
+						{
+							viewModelGames.Find(x => x.IdSnake == User.IdSnake).Points = new Snakes.Point(new Random().Next(10, 783), new Random().Next(10, 410));
+							Snake.Points.Add(new Snakes.Point()
+							{
+								X = Snake.Points[Snake.Points.Count - 1].X,
+								Y = Snake.Points[Snake.Points.Count - 1].Y
+							});
+							LoadLeaders();
+							leaders.Add(new Leaders()
+							{
+								Name = User.Name,
+								Points = Snake.Points.Count - 1
+							});
+							leaders = leaders.OrderBy(x => x.Points).ThenBy(x => x.Name).ToList();
+							viewModelGames.Find(x => x.IdSnake == User.IdSnake).Top = leaders.FindIndex(x => x.Points == Snake.Points.Count - 3 && x.Name == User.Name) + 1;
+						}
+					}
+					if (Snake.GameOver)
+					{
+						LoadLeaders();
+						leaders.Add(new Leaders()
+						{
+							Name = User.Name,
+							Points = Snake.Points.Count - 1
+						});
+						SaveLeaders();
+					}
 				}
+				Send();
 			}
 		}
 		public static void SaveLeaders()
